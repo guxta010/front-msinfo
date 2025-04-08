@@ -1,0 +1,28 @@
+/* VisualizarOrdem.css */
+
+/* Estilo padrão da página */
+.visualizar-container {
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+  }
+  
+  /* Estilo só para impressão */
+  @media print {
+    body {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+      background: white !important;
+      color: black !important;
+    }
+  
+    .visualizar-container {
+      background: white !important;
+      color: black !important;
+    }
+  
+    button {
+      display: none !important; /* Oculta o botão de imprimir */
+    }
+  }
+  

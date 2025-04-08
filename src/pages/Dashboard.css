@@ -1,0 +1,95 @@
+/* Reset geral */
+body, html {
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #fff;
+    font-family: 'Segoe UI', sans-serif;
+    min-height: 100vh;
+  }
+  
+  /* Header fixo com logo grande */
+  .navbar {
+    background-color: #000 !important;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 3px solid #8B0000;
+  }
+  
+  .navbar img {
+    height: 60px; /* Aumenta o tamanho da logo */
+  }
+  
+  .navbar h4 {
+    margin-left: 1rem;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .btn-logout {
+    border: 2px solid #8B0000;
+    background: transparent;
+    color: #8B0000;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-logout:hover {
+    background-color: #8B0000;
+    color: white;
+  }
+  
+  /* Conteúdo do dashboard */
+  .dashboard-container {
+    padding: 100px 20px 40px;
+    text-align: center;
+  }
+  
+  .dashboard-container h1 {
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+  }
+  
+  /* Cartões vermelhos */
+  .card {
+    background-color: #8B0000;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.2);
+    transition: transform 0.2s ease;
+  }
+  
+  .card:hover {
+    transform: scale(1.03);
+  }
+  
+  /* Botões pretos dentro dos cards */
+  .card .btn {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 15px;
+    border-radius: 6px;
+    transition: background 0.3s ease;
+  }
+  
+  .card .btn:hover {
+    background-color: #222;
+  }
+  
+  /* Responsivo */
+  @media (min-width: 768px) {
+    .card-container {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+    }
+  }
+  

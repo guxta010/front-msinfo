@@ -1,0 +1,79 @@
+.clientes-page {
+    background-color: #000;
+    color: #fff;
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .clientes-header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .clientes-header .logo {
+    width: 150px;
+    margin-bottom: 10px;
+  }
+  
+  .clientes-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+  }
+  
+  .btn-dark {
+    background-color: #8B0000;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(255, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .btn-dark:hover {
+    background-color: #b30000;
+    transform: scale(1.05);
+  }
+  
+  .search-input {
+    background-color: #222;
+    color: white;
+    border: 1px solid #555;
+    padding: 10px;
+    border-radius: 8px;
+    width: 250px;
+  }
+  
+  .clientes-table {
+    width: 90%;
+    max-width: 1000px;
+  }
+  
+  .clientes-table table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #8B0000;
+    color: white;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .clientes-table th,
+  .clientes-table td {
+    padding: 12px;
+    border: 1px solid #222;
+    text-align: left;
+  }
+  
+  .clientes-table th {
+    background-color: #a30000;
+  }
+  
