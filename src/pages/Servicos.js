@@ -117,7 +117,6 @@ function Servicos() {
 
   const filteredServicos = servicos.filter((servico) =>
     servico.descricao.toLowerCase().includes(search.toLowerCase()) ||
-    String(servico.cliente_id).includes(search) ||
     servico.status.toLowerCase().includes(search.toLowerCase())
   );
 
@@ -146,7 +145,6 @@ function Servicos() {
             <tr>
               <th>ID</th>
               <th>Descrição</th>
-              <th>Cliente ID</th>
               <th>Valor</th>
               <th>Status</th>
               <th className="no-print">Ações</th>
@@ -157,13 +155,20 @@ function Servicos() {
               <tr key={servico.id}>
                 <td>{servico.id}</td>
                 <td>{servico.descricao}</td>
-                <td>{servico.cliente_id}</td>
                 <td>R$ {parseFloat(servico.valor).toFixed(2)}</td>
                 <td>{servico.status}</td>
                 <td className="no-print">
-                  <button className="btn-dark" onClick={() => navigate(`/servicos/editar/${servico.id}`)}>Editar</button>
-                  <button className="btn-dark" onClick={() => handleDelete(servico.id)} style={{ marginLeft: "5px", color: "red" }}>Excluir</button>
-                  <button className="btn-dark" onClick={() => handlePrint(servico)} style={{ marginLeft: "5px" }}>Imprimir</button>
+                  <div className="no-print">
+                    <button className="btn-dark" onClick={() => navigate(`/servicos/editar/${servico.id}`)}>Editar</button>
+                    <button
+                      className="btn-dark"
+                      style={{ backgroundColor: "red", color: "white" }}
+                      onClick={() => handleDelete(servico.id)}
+                    >
+                      Excluir
+                    </button>
+                    <button className="btn-dark" onClick={() => handlePrint(servico)}>Imprimir</button>
+                  </div>
                 </td>
               </tr>
             ))}

@@ -49,19 +49,33 @@
 .clientes-table table {
   width: 100%;
   border-collapse: collapse;
+  border: 2px solid white; /* borda branca ao redor da tabela */
 }
 
 .clientes-table th,
 .clientes-table td {
-  border: 1px solid #ccc;
+  border: 1px solid white;
   padding: 10px;
   text-align: left;
+  vertical-align: middle;
+  color: white;
 }
 
 .clientes-table th {
-    background-color: #8B0000;
+  background-color: #8B0000;
+}
+
+.clientes-table td {
+  background-color: #a00000;
 }
 
 .no-print {
-  display: inline-block;
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.no-print button {
+  margin: 2px 0;
 }
