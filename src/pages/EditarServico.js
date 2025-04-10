@@ -11,33 +11,49 @@ function EditarServico() {
   const navigate = useNavigate();
   const printRef = useRef();
 
+  const token = localStorage.getItem("token"); // 🔑 Pega o token salvo no login
+
   useEffect(() => {
     const fetchServico = async () => {
       try {
-        const response = await axios.get(`https://backend-msinfo.onrender.com/servicos/${id}`);
-        const { descricao, cliente, preco, status } = response.data;
+        const response = await axios.get(`https://backend-msinfo.onrender.com/servicos/${id}`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+
+        const { descricao, cliente_id, status, valor } = response.data;
         setDescricao(descricao);
-        setCliente(cliente);
-        setPreco(preco);
+        setCliente(cliente_id);
+        setPreco(valor);
         setStatus(status);
       } catch (error) {
         console.error("Erro ao buscar serviço:", error);
+        alert("Erro ao buscar serviço. Verifique se você está logado.");
       }
     };
     fetchServico();
-  }, [id]);
+  }, [id, token]);
 
   const handleUpdate = async (e) => {
     e.preventDefault();
-    const servicoAtualizado = { descricao, cliente, preco, status };
+    const servicoAtualizado = {
+      descricao,
+      status,
+      valor: preco,
+    };
 
     try {
-      await axios.put(`https://backend-msinfo.onrender.com/servicos/${id}`, servicoAtualizado);
+      await axios.put(`https://backend-msinfo.onrender.com/servicos/${id}`, servicoAtualizado, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
       alert("Serviço atualizado com sucesso!");
       navigate("/servicos");
     } catch (error) {
       console.error("Erro ao atualizar serviço:", error);
-      alert("Erro ao atualizar serviço.");
+      alert("Erro ao atualizar serviço. Verifique se você está logado.");
     }
   };
 
